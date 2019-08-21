@@ -71,7 +71,7 @@ export default class Avatar<
     containerStyle: {},
     imageStyle: {},
     onPressAvatar: () => {},
-    onLongPressAvatar: () => { },
+    onLongPressAvatar: () => {},
   }
 
   static propTypes = {
@@ -113,10 +113,6 @@ export default class Avatar<
           onPress={() =>
             this.props.onPressAvatar &&
             this.props.onPressAvatar(this.props.currentMessage!.user)
-          }
-          onLongPress={() =>
-            this.props.onLongPressAvatar &&
-            this.props.onLongPressAvatar(this.props.currentMessage!.user)
           }
         />
       )

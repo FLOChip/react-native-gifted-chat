@@ -50,9 +50,9 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
   /* Input text; default is undefined, but if specified, it will override GiftedChat's internal state */
   text?: string
   /* Controls whether or not the message bubbles appear at the top of the chat */
-  alignTop?: boolean;
+  alignTop?: boolean
   /* enables the scrollToBottom Component */
-  scrollToBottom?: boolean;
+  scrollToBottom?: boolean
   initialText?: string
   /* Placeholder when text is empty; default is 'Type a message...' */
   placeholder?: string
@@ -168,7 +168,10 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
   onQuickReply?(replies: Reply[]): void
   renderQuickReplies?(quickReplies: QuickReplies['props']): React.ReactNode
   renderQuickReplySend?(): React.ReactNode
-  shouldUpdateMessage?(props: Message['props'], nextProps: Message['props']): boolean
+  shouldUpdateMessage?(
+    props: Message['props'],
+    nextProps: Message['props'],
+  ): boolean
 }
 
 export interface GiftedChatState {
@@ -226,7 +229,6 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
     textInputProps: {},
     listViewProps: {},
     renderCustomView: null,
-    isCustomViewBottom: false,
     renderDay: null,
     renderTime: null,
     renderFooter: null,
@@ -391,10 +393,10 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
   }
 
   componentDidUpdate(prevProps: GiftedChatProps<TMessage> = {}) {
-    if(this.props !== prevProps) {
-    const { messages, text } = this.props
-    this.setMessages(messages || [])
-    this.setTextFromProp(text)
+    if (this.props !== prevProps) {
+      const { messages, text } = this.props
+      this.setMessages(messages || [])
+      this.setTextFromProp(text)
     }
   }
 
